@@ -1,0 +1,6 @@
+<% if @request.persisted? %>
+$("#requisicao").html("<%=j render :partial => 'requests/index', :locals => {:requests => @request.client.requests} %>");
+$("#requisicao").prepend("<%=j notice %>");
+$("#nova_resisicao").html("<%=j render :partial => 'requests/new', :locals => {:request => Request.new, :client => @request.client} %>");
+<% else %>
+$("#requisicao").html("<%=j render :partila => 'request/new', :locals => {:request => @request, :client => @request.client} %>");

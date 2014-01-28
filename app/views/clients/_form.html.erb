@@ -1,0 +1,22 @@
+<%=form_for(client) do |f| %>
+<div class="control-group">
+	<%=f.label :description, "Descrição:"%>
+	<div class="controls">
+		<%=f.text_field :description, :class => "input-xlarge"%>
+	</div>
+</div>
+
+<div class="control-group">
+	<%=f.label :adress, "Endereço:", :class => "control-label"%>
+	<div class="controls">
+		<%=f.text_area :adress, :class => "input-xlarge"%>
+	</div>
+</div>
+
+<div>
+	<%=f.submit "Salvar", :class => "btn btn-success"%>
+	<%=link_to "Voltar", clients_path, :class => "btn" %>
+</div>
+
+<% end %>
+

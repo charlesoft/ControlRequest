@@ -1,0 +1,5 @@
+<% if @request.destroyed? %>
+$("#request_<%=request.id %>").remove();
+<% else %>
+$("#request_<%=request.id %>").prepend("<%= Erro ao escluir requisicao %>");
+<% end %>

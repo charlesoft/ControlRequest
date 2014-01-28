@@ -1,0 +1,44 @@
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Control Request</a>
+          <div class="btn-group pull-right">
+			<a class="btn" href="#"><i class="icon-user"></i> Admin</a>
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+			  <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+          <div class="nav-collapse">
+            <ul class="nav">
+      <li><%=link_to "Home", root_path %></li>
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="new-user.html">New User</a></li>
+          <li class="divider"></li>
+          <li><a href="users.html">Manage Users</a></li>
+        </ul>
+        </li>
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Clientes<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%=link_to "Novo Cliente", new_client_path %></li>
+          <li class="divider"></li>
+          <li><%=link_to "Listar clientes", clients_path %></li>
+        </ul>
+        </li>
+        <li><a href="stats.html">Stats</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+

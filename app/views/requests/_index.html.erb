@@ -1,0 +1,21 @@
+<hr>
+<h4>Requisições</h4>
+
+<% if requests.any? %>
+<% requests.each do |request| %>
+<table>
+	<tr class="list-users">
+		<div id="request_<%=request.id %>" %>
+			<td><h4><%=request.description %></h4></td>
+			<td><h5><%=request.status %></h5></td>
+			<td><%=link_to "Editar", edit_client_request_path(request.client, request), :class => "btn btn-primary", :remote => true %></td>
+		</tr>
+	</table>
+
+	<% end %>
+	<% else %>
+	<div class="alert">
+		Não requisições solicitadas pelo cliente selecionado
+	</div>
+
+	<% end %>
