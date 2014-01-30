@@ -62,5 +62,5 @@ ControlRequest::Application.routes.draw do
     resources :requests
   end
 
-  match "/clients/:client_id/requests/:name" => 'requests#index_requests', :via => :get, :as => :index_requests
+  match "/clients/:name" => 'requests#index_requests', :via => :get, :as => :index_requests
 end

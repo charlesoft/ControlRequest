@@ -25,12 +25,12 @@ class RequestsController < ApplicationController
 	end
 
 	def create
-		@request = Request.new(params[:request])
+		@request = Request.new(request_params)
 		
 		if @request.save
 			flash[:notice] = "Requisicao inserida com sucesso!"
 		else
-			flash[:notice] = "Erro ao inseriri requisicao"
+			flash[:notice] = "Erro ao inserir requisicao"
 		end
 	end
 
@@ -41,7 +41,7 @@ class RequestsController < ApplicationController
 	end
 
 	def update
-		flash[:notice] = @request.update_attributes(params[:request]) ? "Requisicao alterada com sucesso" : "Erro ao modificar requisicao"
+		flash[:notice] = @request.update_attributes(request_params) ? "Requisicao alterada com sucesso" : "Erro ao modificar requisicao"
 	end
 
 	def destroy
@@ -54,6 +54,6 @@ class RequestsController < ApplicationController
 	end
 
 	def request_params
-		params.require(:request).permit(:description, :status)
+		params.require(:request).permit(:description, :status, :client_id)
 	end
 end
