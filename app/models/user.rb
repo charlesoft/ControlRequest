@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 
 	# associations
 	has_many :clients
+
+	def send_email
+		AppMailer::UserMailer.welcome_message(self.name, self.email).deliver
+	end
 end
